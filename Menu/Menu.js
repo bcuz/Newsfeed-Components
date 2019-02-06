@@ -8,13 +8,11 @@ const toggleMenu = (event) => {
   
 }
 
-const toggleClick = (event) => {
-  // console.log(event.target.tagName);
+const toggleOutsideClick = (event) => {
 
   let dontCloseOn = ['LI', 'UL']
   
   if (menu.classList.contains('menu--open') && !dontCloseOn.includes(event.target.tagName)) {
-    // console.log('hi');
 
     menu.classList.toggle('menu--open')
     
@@ -29,4 +27,4 @@ const menuButton = document.querySelector('.menu-button');
 // Using your menuButton reference, add a click handler that calls toggleMenu
 
 menuButton.addEventListener('click', toggleMenu)
-document.addEventListener('click', toggleClick)
+document.addEventListener('click', toggleOutsideClick)
